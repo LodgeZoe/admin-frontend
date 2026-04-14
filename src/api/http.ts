@@ -1,8 +1,10 @@
 import axios from 'axios'
 import { authStorage } from '../stores/auth'
 
-export const http = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8000',
+const base = import.meta.env.VITE_API_BASE_URL as string | undefined
+
+const http = axios.create({
+  ...(base ? { baseURL: base } : {}),
   timeout: 15000,
 })
 
@@ -14,4 +16,6 @@ http.interceptors.request.use((config) => {
   }
   return config
 })
+
+export default http
 
