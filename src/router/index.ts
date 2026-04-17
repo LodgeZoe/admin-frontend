@@ -13,6 +13,8 @@ const router = createRouter({
       component: () => import('../layouts/AdminLayout.vue'),
       children: [
         { path: '', redirect: '/products' },
+        { path: 'banners', component: () => import('../pages/BannersPage.vue') },
+        { path: 'home-categories', component: () => import('../pages/HomeCategoriesPage.vue') },
         { path: 'products', component: () => import('../pages/ProductsPage.vue') },
         { path: 'stores',   component: () => import('../pages/StoresPage.vue') },
         { path: 'orders',   component: () => import('../pages/OrdersPage.vue') },

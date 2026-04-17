@@ -1,0 +1,5 @@
+services:
+  admin-frontend:
+    build: .
+    ports:
+      - "8080:80"

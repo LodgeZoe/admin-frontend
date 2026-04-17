@@ -10,6 +10,14 @@
         text-color="#a0a3b1"
         active-text-color="#ffffff"
       >
+        <el-menu-item index="/banners">
+          <el-icon><Picture /></el-icon>
+          <span>Banner 管理</span>
+        </el-menu-item>
+        <el-menu-item index="/home-categories">
+          <el-icon><Grid /></el-icon>
+          <span>首页分类</span>
+        </el-menu-item>
         <el-menu-item index="/products">
           <el-icon><Goods /></el-icon>
           <span>商品管理</span>
@@ -41,7 +49,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { Goods, Location, List } from '@element-plus/icons-vue'
+import { Goods, Location, List, Picture, Grid } from '@element-plus/icons-vue'
 import { useAuthStore } from '../stores/auth'
 import { logout } from '../api/auth'
 
@@ -50,6 +58,8 @@ const router = useRouter()
 const auth   = useAuthStore()
 
 const titleMap: Record<string, string> = {
+  '/banners': 'Banner 管理',
+  '/home-categories': '首页分类',
   '/products': '商品管理',
   '/stores':   '门店管理',
   '/orders':   '订单管理',
