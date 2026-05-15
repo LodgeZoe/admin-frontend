@@ -8,7 +8,11 @@ export default defineConfig({
     host: '127.0.0.1',
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:8080',
+        target: 'http:/124.220.107.230:8080',
+        changeOrigin: true,
+      },
+      '/uploads': {
+        target: 'http:/124.220.107.230:8080',
         changeOrigin: true,
       },
     },

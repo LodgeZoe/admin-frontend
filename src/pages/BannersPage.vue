@@ -50,17 +50,8 @@
         <el-form-item label="副标题">
           <el-input v-model="form.sub_title" placeholder="可选" />
         </el-form-item>
-        <el-form-item label="图片URL" prop="image_url">
-          <el-input v-model="form.image_url" placeholder="请输入图片URL" />
-        </el-form-item>
-        <el-form-item label="预览">
-          <el-image
-            v-if="form.image_url"
-            :src="form.image_url"
-            style="width:120px;height:120px;object-fit:cover;border-radius:6px"
-            fit="cover"
-          />
-          <span v-else>—</span>
+        <el-form-item label="图片" prop="image_url">
+          <ImageUploader v-model="form.image_url" />
         </el-form-item>
         <el-row :gutter="16">
           <el-col :span="12">
@@ -110,6 +101,7 @@ import {
   listBanners, createBanner, updateBanner, deleteBanner,
   type Banner,
 } from '../api/banners'
+import ImageUploader from '../components/ImageUploader.vue'
 
 const banners = ref<Banner[]>([])
 const loading = ref(false)

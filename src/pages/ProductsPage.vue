@@ -58,8 +58,8 @@
         <el-form-item label="副标题" prop="subtitle">
           <el-input v-model="form.subtitle" placeholder="副标题（可选）" />
         </el-form-item>
-        <el-form-item label="封面图URL" prop="cover_url">
-          <el-input v-model="form.cover_url" placeholder="请输入封面图URL" />
+        <el-form-item label="封面图" prop="cover_url">
+          <ImageUploader v-model="form.cover_url" />
         </el-form-item>
         <el-row :gutter="16">
           <el-col :span="12">
@@ -111,6 +111,7 @@ import {
   listProducts, createProduct, updateProduct, deleteProduct,
   type Product,
 } from '../api/products'
+import ImageUploader from '../components/ImageUploader.vue'
 
 // ─── 列表 ─────────────────────────────────────────────────────────────────────
 
